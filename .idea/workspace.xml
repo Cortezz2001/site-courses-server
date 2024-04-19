@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4931647e-9edf-4c4d-886d-b1179803c1d6" name="Changes" comment="" />
+    <list default="true" id="4931647e-9edf-4c4d-886d-b1179803c1d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/courses_backend/courses_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/courses_backend/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
