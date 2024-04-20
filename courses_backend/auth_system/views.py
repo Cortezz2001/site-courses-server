@@ -10,7 +10,13 @@ def UserRegistration(request):
         "errors":"no_errors",
     }
 
-    json_data = request.POST.get('json_data')
+    json_data = request.POST.get('json_data', default=None)
+
+    if json_data == None:
+        json_response["status"] = "failed"
+        json_response["errors"] = "Not found data"
+        return JsonResponse(json_response)
+
     data = json.loads(json_data)
 
     #Проверка сушествования пользователя
@@ -18,7 +24,7 @@ def UserRegistration(request):
 
     if mail_exist:
         json_response["status"] = "failed"
-        json_response["errors"] = "Пользователь с такой почтой уже существует"
+        json_response["errors"] = "User with this mail is exist"
     else:
         user = User.objects.create_user(data["email"], data["email"], data["password"])
 
