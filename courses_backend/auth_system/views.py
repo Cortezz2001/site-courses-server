@@ -1,9 +1,11 @@
 import json
+
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 
 
-def UserRegistration(request):
+def user_registration(request):
 
     json_response = {
         "status":"no_status",
@@ -12,7 +14,7 @@ def UserRegistration(request):
 
     json_data = request.POST.get('json_data', default=None)
 
-    if json_data == None:
+    if json_data is None:
         json_response["status"] = "failed"
         json_response["errors"] = "Not found data"
         return JsonResponse(json_response)
@@ -32,5 +34,65 @@ def UserRegistration(request):
         user.last_name = data["lastname"]
         user.save()
         json_response["status"] = "succesfully"
+
+    return JsonResponse(json_response)
+
+
+def user_authentification(request):
+
+    json_response = {
+        "status":"no_status",
+        "errors":"no_errors",
+    }
+
+    json_data = request.POST.get('json_data', default=None)
+    # Проверка сушествования json_data
+    if json_data == None:
+        json_response["status"] = "failed"
+        json_response["errors"] = "Not found data"
+        return JsonResponse(json_response)
+
+    data = json.loads(json_data)
+
+    #Проверка сушествования пользователя
+    user = authenticate(username=data["username"], password="password")
+    if user is not None:
+        # A backend authenticated the credentials
+        login(request, user)
+        json_response["status"] = "succesfully"
+    else:
+        # No backend authenticated the credentials
+        json_response["status"] = "failed"
+        json_response["errors"] = "wrong login or password"
+
+    return JsonResponse(json_response)
+
+
+def check_user_authentification(request):
+
+    json_response = {
+        "status":"no_status",
+        "errors":"no_errors",
+    }
+
+    json_data = request.POST.get('json_data', default=None)
+    # Проверка сушествования json_data
+    if json_data is None:
+        json_response["status"] = "failed"
+        json_response["errors"] = "Not found data"
+        return JsonResponse(json_response)
+
+    data = json.loads(json_data)
+
+    #Проверка сушествования пользователя
+    user = User.objects.get(username=data["username"])
+
+    if user.is_autentificated:
+        # A backend authenticated the credentials
+        json_response["status"] = "succesfully"
+    else:
+        # No backend authenticated the credentials
+        json_response["status"] = "failed"
+        json_response["errors"] = "user is not autentificated"
 
     return JsonResponse(json_response)
