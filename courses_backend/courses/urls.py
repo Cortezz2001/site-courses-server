@@ -1,10 +1,5 @@
-from django.urls import include, path
-from . import views
-from rest_framework import routers
+from django.urls import path
 
-router = routers.SimpleRouter()
-router.register(r"view", views.CoursesAPI)
 
 urlpatterns = [
-    path('', include(router.urls))
 ]

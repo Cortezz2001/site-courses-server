@@ -9,7 +9,6 @@ class Course(models.Model):
     class Meta:
         verbose_name = "Курс"
         verbose_name_plural = "Курсы"
-        ordering = ["course_name","course_data"]
 
     def __str__(self):
         return self.course_name

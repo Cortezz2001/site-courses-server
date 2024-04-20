@@ -5,11 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4931647e-9edf-4c4d-886d-b1179803c1d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/courses_backend/courses/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/courses_backend/courses/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/courses_backend/auth_system/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/courses/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/courses/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/courses/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/courses/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/courses/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/courses_backend/courses_backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/courses_backend/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/courses_backend/courses_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/courses_backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses_backend/project/views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +48,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Projects/Python/courses_backend/courses_backend/courses"
+    "last_opened_file_path": "C:/Projects/Python/courses_backend/courses_backend/auth_system"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Python\courses_backend\courses_backend\auth_system" />
       <recent name="C:\Projects\Python\courses_backend\courses_backend\courses" />
       <recent name="C:\Projects\Python\courses_backend\courses_backend\courses_backend" />
     </key>

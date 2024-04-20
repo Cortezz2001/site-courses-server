@@ -10,9 +10,9 @@ def index(request):
     return HttpRequest("Hello world")
 
 
-class CoursesAPI(viewsets.ModelViewSet):
-    p = Course(project_name = "app", project_data="")
-    p.save()
-    print("create")
-    queryset = Course.objects.all()
-    serializer_class = CourseSerializer
+#class CoursesAPI(viewsets.ModelViewSet):
+#    p = Course(course_name = "app", course_data="")
+#    p.save()
+#    print("create")
+#    queryset = Course.objects.all()
+#    serializer_class = CourseSerializer
