@@ -3,8 +3,10 @@ import json
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 def user_registration(request):
 
     json_response = {
@@ -12,14 +14,14 @@ def user_registration(request):
         "errors":"no_errors",
     }
 
-    json_data = request.POST.get('json_data', default=None)
+    json_data = request.body
 
     if json_data is None:
         json_response["status"] = "failed"
         json_response["errors"] = "Not found data"
         return JsonResponse(json_response)
 
-    data = json.loads(json_data)
+    data = json.loads(json_data.decode('utf-8'))
 
     #Проверка сушествования пользователя
     mail_exist = User.objects.filter(email=data["email"]).exists()
@@ -38,6 +40,7 @@ def user_registration(request):
     return JsonResponse(json_response)
 
 
+@csrf_exempt
 def user_authentification(request):
 
     json_response = {
@@ -45,17 +48,17 @@ def user_authentification(request):
         "errors":"no_errors",
     }
 
-    json_data = request.POST.get('json_data', default=None)
+    json_data = request.body
     # Проверка сушествования json_data
     if json_data == None:
         json_response["status"] = "failed"
         json_response["errors"] = "Not found data"
         return JsonResponse(json_response)
 
-    data = json.loads(json_data)
+    data = json.loads(json_data.decode('utf-8'))
 
     #Проверка сушествования пользователя
-    user = authenticate(username=data["username"], password="password")
+    user = authenticate(username=data["email"], password=data["password"])
     if user is not None:
         # A backend authenticated the credentials
         login(request, user)
@@ -68,26 +71,27 @@ def user_authentification(request):
     return JsonResponse(json_response)
 
 
+@csrf_exempt
 def check_user_authentification(request):
 
     json_response = {
         "status":"no_status",
         "errors":"no_errors",
     }
-
-    json_data = request.POST.get('json_data', default=None)
+    json_data = request.body
     # Проверка сушествования json_data
     if json_data is None:
         json_response["status"] = "failed"
         json_response["errors"] = "Not found data"
         return JsonResponse(json_response)
 
-    data = json.loads(json_data)
+
+    data = json.loads(json_data.decode('utf-8'))
 
     #Проверка сушествования пользователя
-    user = User.objects.get(username=data["username"])
+    user = User.objects.get(username=data["email"])
 
-    if user.is_autentificated:
+    if user.is_authenticated:
         # A backend authenticated the credentials
         json_response["status"] = "succesfully"
     else:
