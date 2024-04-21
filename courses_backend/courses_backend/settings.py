@@ -54,13 +54,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'https://localhost:3000',
-]
-
-CSRF_TRUSTED_ORIGINS = ['http://*.localhost:3000']
-
 ROOT_URLCONF = 'courses_backend.urls'
 
 TEMPLATES = [
