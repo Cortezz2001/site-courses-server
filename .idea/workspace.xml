@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4931647e-9edf-4c4d-886d-b1179803c1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses_backend/auth_system/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/auth_system/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses_backend/courses_backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/courses_backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses_backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/courses_backend/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +82,17 @@
       <updated>1713554257763</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
